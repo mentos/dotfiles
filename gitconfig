@@ -1,0 +1,22 @@
+[user]
+	name = Ioannis Tziligkakis
+	email = gtsiligkakis@gmail.com
+[core]
+	editor = vim
+[color]
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[push]
+	default = simple

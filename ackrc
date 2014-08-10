@@ -1,0 +1,13 @@
+--sort-files
+--color
+--ignore-file=is:structure.sql
+--ignore-dir=log/
+--ignore-dir=.git/
+--ignore-file=match:/\.map$/
+--type-add=css=scss
+--type-add=ruby=.haml,.feature,.ru,.lock
+--type-set=coffeescript=.coffee
+--type-set=coffee=.coffee
+--type-set=coffee=.coffee
+--type-set=feature=.feature
+--type-set=json=.json

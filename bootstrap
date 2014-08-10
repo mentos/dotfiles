@@ -1,0 +1,59 @@
+#!/bin/bash
+
+backupdir="$HOME/.dotfiles/local.bak/$(date "+%Y%m%d%H%M.%S")"
+excluded=(.git .gitignore .gitmodules bootstrap bash README.md local.bak)
+
+backup() {
+  mkdir -p $backupdir
+  local files=( $(ls -A) )
+
+  for file in "${files[@]}"; do
+    in_array $file "${excluded[@]}" || cp -Rf "$HOME/.$file" "$backupdir/$file"
+  done
+}
+
+in_array() {
+  local hay needle=$1
+  shift
+  for hay; do
+    [[ $hay == $needle ]] && return 0
+  done
+  return 1
+}
+
+list_files() {
+  local files=( $(ls -A) )
+  for file in "${files[@]}"; do
+    in_array $file "${excluded[@]}" || echo $file
+  done
+}
+
+ensure_installation_dir() {
+  if [ `pwd` != "$HOME/.dotfiles" ]; then
+    echo " "
+    echo "Error: dotfiles installation must be invoked inside $HOME/.dotfiles,"
+    echo "       otherwise you will end up with a broken \$HOME configuration."
+    echo " "
+    echo "       Try this: cd ~/.dotfiles"
+    echo "                 bash bootstrap"
+    echo " "
+    exit 1
+  fi
+}
+
+install() {
+  ensure_installation_dir
+  backup
+
+  local files=( $(ls -A) )
+  for file in "${files[@]}"; do
+    in_array $file "${excluded[@]}"
+    should_install=$?
+    if [ $should_install -gt 0 ]; then
+      [ -e "$HOME/.$file" ] && rm "$HOME/.$file"
+      ln -s "$HOME/.dotfiles/$file" "$HOME/.$file"
+    fi
+  done
+}
+
+install

@@ -1,0 +1,18 @@
+# Basic aliases
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias hist='history | grep' # requires an argument
+alias la='ls -lA'
+alias ls='ls -l --color=auto'
+alias mkdir='mkdir -p -v'
+
+# Git aliases
+alias gad='git add .'
+alias gai='git add -i'
+alias gap='git add --patch'
+alias gcc='git commit -am'
+alias gco='git checkout'
+alias gll='git log --oneline --decorate --graph'
+alias gss='git status'
+alias gsu='git stash -u'
