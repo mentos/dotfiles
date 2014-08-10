@@ -8,7 +8,7 @@ backup() {
   local files=( $(ls -A) )
 
   for file in "${files[@]}"; do
-    in_array $file "${excluded[@]}" || cp -Rf "$HOME/.$file" "$backupdir/$file"
+    in_array $file "${excluded[@]}" || ([ -e "$HOME/.$file" ] && cp -Rf "$HOME/.$file" "$backupdir/$file")
   done
 }
 
