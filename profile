@@ -14,6 +14,10 @@ if [ -s $HOME/.rvm/scripts/rvm ]; then
   . "$HOME/.rvm/scripts/rvm"
 fi
 
+if [ -d /usr/local/heroku/bin ]; then
+  export PATH="/usr/local/heroku/bin:$PATH"
+fi
+
 if [ -n "$BASH_VERSION" ]; then
   if [ -f "$HOME/.bashrc" ]; then
     . "$HOME/.bashrc"
