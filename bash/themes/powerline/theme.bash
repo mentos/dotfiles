@@ -6,7 +6,6 @@
 SHELL_SSH_CHAR="⌁ "
 SHELL_THEME_PROMPT_COLOR=32
 SHELL_SSH_THEME_PROMPT_COLOR=208
-SHELL_DATE="`date +%H:%M` "
 
 VIRTUALENV_CHAR="ⓔ "
 VIRTUALENV_THEME_PROMPT_COLOR=35
@@ -24,6 +23,10 @@ SCM_THEME_PROMPT_DIRTY_COLOR=220
 CWD_THEME_PROMPT_COLOR=240
 
 LAST_STATUS_THEME_PROMPT_COLOR=52
+
+function powerline_shell_date {
+  SHELL_DATE="`date +%H:%M` "
+}
 
 function set_rgb_color {
     if [[ "${1}" != "-" ]]; then
@@ -84,6 +87,7 @@ function powerline_last_status_prompt {
 function powerline_prompt_command() {
     local LAST_STATUS="$?"
 
+    powerline_shell_date
     powerline_shell_prompt
     powerline_virtualenv_prompt
     powerline_scm_prompt
