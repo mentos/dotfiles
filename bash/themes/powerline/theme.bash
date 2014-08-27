@@ -95,6 +95,14 @@ function powerline_prompt_command() {
     powerline_last_status_prompt LAST_STATUS
 
     PS1="${SHELL_PROMPT}${VIRTUALENV_PROMPT}${SCM_PROMPT}${CWD_PROMPT}\n${SHELL_DATE}${LAST_STATUS_PROMPT}${SHELL_SSH_CHAR}"
+
+    case $TERM in
+        xterm*)
+            PS1="\[\e]0;[\T|\u@\h|\w] \a\]$PS1"
+        ;;
+    *)
+        ;;
+    esac
 }
 
 PROMPT_COMMAND=powerline_prompt_command
