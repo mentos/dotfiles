@@ -14,6 +14,13 @@ if [ -s $HOME/.rvm/scripts/rvm ]; then
   . "$HOME/.rvm/scripts/rvm"
 fi
 
+if [ -s $HOME/.nvm ]; then
+  export NVM_DIR="/home/cirith/.nvm"
+  export PATH="$PATH:$HOME/.nvm"
+  source "$HOME/.nvm/nvm.sh"
+  [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+fi
+
 if [ -d /usr/local/heroku/bin ]; then
   export PATH="/usr/local/heroku/bin:$PATH"
 fi
