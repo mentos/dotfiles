@@ -3,6 +3,8 @@
 --ignore-file=is:structure.sql
 --ignore-dir=log/
 --ignore-dir=.git/
+--ignore-dir=tmp/
+--ignore-dir=doc/
 --ignore-file=match:/\.map$/
 --type-add=css=scss
 --type-add=ruby=.haml,.feature,.ru,.lock
