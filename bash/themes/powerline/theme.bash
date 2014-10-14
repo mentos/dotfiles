@@ -98,7 +98,7 @@ function powerline_prompt_command() {
 
     case $TERM in
         xterm*)
-            PS1="\[\e]0;[\T|\u@\h|\w] \a\]$PS1"
+            PS1="\[\e]0;\T|\u@\h|\w \a\]$PS1"
         ;;
     *)
         ;;
