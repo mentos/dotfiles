@@ -44,3 +44,7 @@ fi
 source "$HOME/.dotfiles/bash/themes/base/colors.bash"
 source "$HOME/.dotfiles/bash/themes/base/theme.bash"
 source "$HOME/.dotfiles/bash/themes/powerline/theme.bash"
+
+if [ -f "$HOME/.dotfiles/bash/secrets.bash" ]; then
+  source "$HOME/.dotfiles/bash/secrets.bash"
+fi
