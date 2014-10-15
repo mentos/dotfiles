@@ -44,12 +44,3 @@ fi
 source "$HOME/.dotfiles/bash/themes/base/colors.bash"
 source "$HOME/.dotfiles/bash/themes/base/theme.bash"
 source "$HOME/.dotfiles/bash/themes/powerline/theme.bash"
-
-# If this is an xterm set the title to user@host:dir
-case $TERM in
-    xterm*)
-        PS1="\[\e]0;\T \u@\h \a\]$PS1"
-    ;;
-*)
-    ;;
-esac
