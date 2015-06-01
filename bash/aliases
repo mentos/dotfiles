@@ -6,6 +6,7 @@ alias hist='history | grep' # requires an argument
 alias la='ls -lA'
 alias ls='ls -l --color=auto'
 alias mkdir='mkdir -p -v'
+alias ..='cd ..'
 
 # Git aliases
 alias gad='git add .'
