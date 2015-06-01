@@ -1,6 +1,7 @@
 --sort-files
 --color
 --ignore-file=is:structure.sql
+--ignore-file=is:components.js
 --ignore-file=is:ui-components.js
 --ignore-dir=log/
 --ignore-dir=.git/
