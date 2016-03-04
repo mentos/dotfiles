@@ -1,18 +1,27 @@
 --sort-files
 --color
+
+# always ignore this files and dirs
 --ignore-file=is:structure.sql
 --ignore-file=is:components.js
 --ignore-file=is:ui-components.js
+--ignore-file=match:/\.map$/
 --ignore-dir=log/
 --ignore-dir=.git/
+--ignore-dir=.gs/
 --ignore-dir=tmp/
 --ignore-dir=doc/
 --ignore-dir=vendor/components
---ignore-file=match:/\.map$/
+
+# define custom file types
 --type-add=css=scss
---type-add=ruby=.haml,.feature,.ru,.lock
+--type-add=ruby=.haml,.feature,.ru,.lock,.ru
+--type-set=coffee=.coffee
 --type-set=coffeescript=.coffee
---type-set=coffee=.coffee
---type-set=coffee=.coffee
 --type-set=feature=.feature
+--type-set=haml=.haml
 --type-set=json=.json
+--type-set=markdown=.markdown
+--type-set=mote=.mote
+--type-set=org=.org
+--type-set=sass=.sass,.scss
