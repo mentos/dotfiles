@@ -15,10 +15,15 @@ if [ -s $HOME/.rvm/scripts/rvm ]; then
 fi
 
 if [ -s $HOME/.nvm ]; then
-  export NVM_DIR="/home/cirith/.nvm"
-  export PATH="$PATH:$HOME/.nvm"
-  source "$HOME/.nvm/nvm.sh"
-  [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+  export NVM_DIR="$HOME/.nvm"
+
+  if [ "$(uname)" == "Darwin" ]; then
+    . $(brew --prefix nvm)/nvm.sh
+  else
+    export PATH="$PATH:$HOME/.nvm"
+    source "$HOME/.nvm/nvm.sh"
+    [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+  fi
 fi
 
 if [ -d /usr/local/heroku/bin ]; then
