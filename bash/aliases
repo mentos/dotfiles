@@ -20,3 +20,6 @@ alias gll='git log --oneline --decorate --graph'
 alias gss='git status'
 alias gsu='git stash -u'
 alias gdd='git diff'
+
+# Misc
+alias killall_ruby="ps -ef | grep ruby | grep -v ruby |awk '{print $2}' | xargs kill -9"
