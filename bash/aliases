@@ -5,6 +5,7 @@ alias mkdir='mkdir -p -v'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
+alias dm='docker-machine'
 
 # OS Specific aliases
 if [ "$(uname)" == "Darwin" ]; then
